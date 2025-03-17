@@ -2,13 +2,15 @@
   <div class="card">
     <div class="card-body">
       <h3 class="card-title">Parent Component (AppComponent)</h3>
-      <input type="text" class="form-control w-75" />
+      <input type="text" class="form-control w-75" [(ngModel)] = "pText"/>
+      <!--ngModel binds the user's input to the variable, pText, defined in app.component.ts. 2-Way Binding  -->
       <p>This is the message from the Child:</p>
 
       <div class="container">
         <div class="row">
           <div class="col">
-            <app-child></app-child>
+            <!--Input Binding. Child's 'inputText' will be updated from source (parent's), pText variable-->
+            <app-child [inputText] = "pText"></app-child>
           </div>
         </div>
       </div>
